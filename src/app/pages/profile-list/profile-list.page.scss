@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container .list {
+  width: 100%;
+  padding: 10px;
+  background-color: transparent;
+}
+
+.container .list .item {
+  margin: 5px 0;
+  padding: 12px 10px;
+  border-radius: 15px;
+  background-color: #222428;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  display: flex;
+}
+
+.container .list .item:hover {
+  background-color: #2b2d31;
+}
+
+.container .list .item .avatar {
+  margin-right: 10px;
+}
+
+.container .list .item .avatar img {
+  width: 50px;
+}
+
+.container .list .item .content {
+  flex:1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

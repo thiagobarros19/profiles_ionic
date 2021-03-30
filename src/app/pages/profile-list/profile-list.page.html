@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Profiles
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button slot="icon-only" title="Adicionar perfil" [routerLink]="['/profile/0']">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Profile List</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="container">
+    <div class="list">
+      <div *ngIf="profiles.length == 0">
+        <div class="item">
+          Você ainda não possui nenhum perfil cadastrado, insira seu primeiro
+          clicando no botão adicionar perfil no canto superior direto da tela
+        </div>
+      </div>
+      <div *ngFor="let p of profiles">
+        <div class="item">
+          <div class="avatar" routerLink="/profile/{{p.id}}">
+            <img src="../../../assets/icon/profiles/001-woman.svg" alt="">
+          </div>
+          <div class="content" routerLink="/profile/{{p.id}}">
+            <span>{{p.name}}</span>
+            <span>{{getAge(p.birth)}} {{getAge(p.birth) == 1 ? 'ano' : 'anos'}}</span>
+          </div>
+          <ion-buttons slot="end">
+            <ion-button slot="icon-only" (click)="removeProfile(p.id)">
+              <ion-icon name="trash-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,96 @@
+<header>
+  <ion-buttons>
+    <ion-button slot="icon-only" [routerLink]="['/profile-list']">
+      <ion-icon size="large" name="arrow-back-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</header>
+
+<ion-content>
+  <div class="container">
+    <div class="avatar-container flex-center">
+      <div class="avatar" style="background-image: url('assets/icon/profiles/001-woman.svg')"></div>
+    </div>
+    <ion-buttons class="flex-center">
+      <ion-button slot="icon-only" (click)="openSocialLink('FACEBOOK')">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+      <ion-button slot="icon-only" (click)="openSocialLink('INSTAGRAM')">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-button>
+      <ion-button slot="icon-only" (click)="openSocialLink('LINKEDIN')">
+        <ion-icon name="logo-linkedin"></ion-icon>
+      </ion-button>
+      <ion-button slot="icon-only" (click)="openSocialLink('TWITTER')">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <form [formGroup]="profile">
+      <ion-list>
+        <h3>Basico</h3>
+        <ion-item color="light">
+          <ion-label position="floating">Nome</ion-label>
+          <ion-input
+            formControlName="name"
+            id="name"
+            name="name"
+          ></ion-input>
+        </ion-item>
+        <ion-item color="light">
+          <ion-label position="stacked">Nascimento</ion-label>
+          <ion-input
+            type="date"
+            formControlName="birth"
+            id="birth"
+            name="birth"
+          ></ion-input>
+        </ion-item>
+        <ion-item color="light">
+          <ion-label position="floating">Telefone</ion-label>
+          <ion-input
+            formControlName="phone"
+            id="phone"
+            name="phone"
+            type="text"
+          ></ion-input>
+        </ion-item>
+        <h3>Redes sociais</h3>
+        <ion-item color="light">
+          <ion-label position="floating">Facebook</ion-label>
+          <ion-input
+            formControlName="facebook"
+            id="facebook"
+            name="facebook"
+          ></ion-input>
+        </ion-item>
+        <ion-item color="light">
+          <ion-label position="floating">Instagram</ion-label>
+          <ion-input
+            formControlName="instagram"
+            id="instagram"
+            name="instagram"
+          ></ion-input>
+        </ion-item>
+        <ion-item color="light">
+          <ion-label position="floating">Linkedin</ion-label>
+          <ion-input
+            formControlName="linkedin"
+            id="linkedin"
+            name="linkedin"
+          ></ion-input>
+        </ion-item>
+        <ion-item color="light">
+          <ion-label position="floating">Twitter</ion-label>
+          <ion-input
+            formControlName="twitter"
+            id="twitter"
+            name="twitter"
+          ></ion-input>
+        </ion-item>
+        <div class="submit-button">
+          <ion-button type="submit" color="dark" (click)="onSubmit()" [disabled]="!profile.valid">Salvar</ion-button>
+        </div>
+      </ion-list>
+    </form>
+  </div>
+</ion-content>

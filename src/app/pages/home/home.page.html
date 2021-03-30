@@ -1,0 +1,26 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true">
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+  <div class="container" id="container">
+    <lottie-player
+      autoplay
+      loop
+      src="../../assets/lottie/profile.json"
+    >
+    </lottie-player>
+    <strong>Bem vindo ao<br>Profiles!</strong>
+    <ion-button [routerLink]="['/profile-list']" color="primary">Entrar</ion-button>
+  </div>
+</ion-content>
